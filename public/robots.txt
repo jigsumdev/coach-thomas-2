@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://academie-evolution.com/sitemap-index.xml

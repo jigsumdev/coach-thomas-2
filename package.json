@@ -1,0 +1,30 @@
+{
+  "name": "forge",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "node ./node_modules/astro/bin/astro.mjs dev",
+    "build": "node ./node_modules/astro/bin/astro.mjs check && node ./node_modules/astro/bin/astro.mjs build",
+    "preview": "node ./node_modules/astro/bin/astro.mjs preview",
+    "check": "node ./node_modules/astro/bin/astro.mjs check",
+    "pages:dev:proxy": "wrangler pages dev -- npm run dev",
+    "pages:dev": "wrangler pages dev dist",
+    "deploy": "npm run build && npm run deploy:pages",
+    "deploy:pages": "wrangler pages deploy dist",
+    "pages:deploy": "npm run deploy"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/sitemap": "^3.7.1",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource/geist-sans": "^5.2.5",
+    "@tailwindcss/vite": "^4.2.1",
+    "@typeform/embed": "^6.0.0",
+    "astro": "^6.0.5",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "wrangler": "^4.28.0"
+  }
+}

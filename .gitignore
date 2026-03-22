@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Astro cache & build output (CI/Cloudflare builds from source)
+.astro/
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS & editor
+.DS_Store
+Thumbs.db

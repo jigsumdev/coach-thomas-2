@@ -1,0 +1,90 @@
+---
+import { getMessages, type Locale } from '../utils/i18n';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'fr' } = Astro.props;
+const m = getMessages(lang);
+const cookiesPath = lang === 'fr' ? '/cookies/' : '/en/cookies/';
+---
+
+<div
+  id="cookie-consent"
+  class="cookie-consent"
+  role="region"
+  aria-label={m.cookieConsent.policy}
+  hidden
+>
+  <div class="cookie-consent__inner glass">
+    <p class="cookie-consent__text text-sm text-white/80 leading-relaxed">
+      {m.cookieConsent.text}{' '}
+      <a href={cookiesPath} class="underline hover:text-white transition">{m.cookieConsent.policy}</a>
+    </p>
+    <div class="cookie-consent__actions">
+      <button type="button" class="btn btn-primary" id="cookie-consent-accept">
+        {m.cookieConsent.accept}
+      </button>
+      <button type="button" class="btn" id="cookie-consent-decline">
+        {m.cookieConsent.decline}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const KEY = 'ae_cookie_consent';
+    const el = document.getElementById('cookie-consent');
+    if (!el) return;
+    try {
+      if (localStorage.getItem(KEY)) return;
+    } catch {
+      return;
+    }
+    el.hidden = false;
+    function save(v: string) {
+      try {
+        localStorage.setItem(KEY, v);
+      } catch {
+        /* ignore */
+      }
+      el!.hidden = true;
+    }
+    document.getElementById('cookie-consent-accept')?.addEventListener('click', () => save('accepted'));
+    document.getElementById('cookie-consent-decline')?.addEventListener('click', () => save('declined'));
+  })();
+</script>
+
+<style>
+  .cookie-consent {
+    position: fixed;
+    z-index: 90;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    pointer-events: none;
+  }
+  .cookie-consent:not([hidden]) {
+    pointer-events: auto;
+  }
+  .cookie-consent__inner {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .cookie-consent__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>

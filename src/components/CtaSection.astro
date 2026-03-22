@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  body?: string;
+  ctaHref: string;
+  ctaLabel: string;
+  footnote?: string;
+  class?: string;
+}
+
+const {
+  title,
+  body,
+  ctaHref,
+  ctaLabel,
+  footnote,
+  class: className = '',
+} = Astro.props;
+---
+
+<section class={`relative z-20 ${className}`}>
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 py-20">
+    <div class="glass rounded-2xl p-8 md:p-12 text-center reveal" style="--delay:.1s">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight">{title}</h2>
+      {body && <p class="text-white/65 mt-3 max-w-xl mx-auto">{body}</p>}
+      <div class="mt-6">
+        <a href={ctaHref} class="btn btn-primary">{ctaLabel}</a>
+      </div>
+      {footnote && <p class="text-xs text-white/50 mt-4">{footnote}</p>}
+    </div>
+  </div>
+</section>

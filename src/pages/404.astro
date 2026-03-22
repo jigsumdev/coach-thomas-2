@@ -1,0 +1,18 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout title="404 — Page introuvable | Académie Évolution" description="La page demandée est introuvable." lang="fr" showHeroBg>
+  <section class="relative z-20 flex min-h-[70vh] items-center justify-center border-0">
+    <div class="text-center px-6">
+      <p class="tag mb-4 mx-auto">404</p>
+      <h1 class="font-display text-5xl sm:text-7xl font-extrabold tracking-tighter">Page introuvable</h1>
+      <p class="text-white/60 mt-4 text-lg">La page que tu cherches n’existe pas ou a été déplacée.</p>
+      <p class="text-white/45 mt-2 text-sm">Page not found / Page introuvable</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/" class="btn btn-primary">Retour à l’accueil</a>
+        <a href="/en/" class="btn bg-transparent">English home</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

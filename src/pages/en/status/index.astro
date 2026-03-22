@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="System status | Académie Évolution"
+  description="Current status of services and the app."
+  lang="en"
+>
+  <section class="relative z-20 border-0">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 py-20">
+      <span class="tag anim-fade-up" style="--delay:.2s">Status</span>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tighter mt-4 anim-slide-l" style="--delay:.35s">System status</h1>
+      <p class="text-sm text-white/60 mt-3 anim-fade-up" style="--delay:.5s">Current state of all services</p>
+
+      <div class="glass rounded-2xl p-6 mt-12 flex items-center gap-4 reveal" style="--delay:.1s">
+        <div class="h-4 w-4 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></div>
+        <div>
+          <p class="font-display font-semibold tracking-tight text-lg">All systems operational</p>
+          <p class="text-sm text-white/50">Services are running normally</p>
+        </div>
+      </div>
+
+      <div class="mt-8 space-y-3">
+        {['Website', 'App', 'API', 'Coach messaging', 'Payments', 'Meal tracking'].map((label, i) => (
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style={`--delay:${0.15 + i * 0.05}s`}>
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">{label}</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Operational</span>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-xs text-white/30 mt-8 text-center reveal" style="--delay:.5s">
+        Issue? Contact <a href="mailto:info@academieevolution.com" class="underline hover:text-white/50 transition">info@academieevolution.com</a>
+      </p>
+    </div>
+  </section>
+</PageLayout>

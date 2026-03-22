@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import { SITE } from '../data/site';
+import { getAlternateUrls, slugFromPathname } from '../utils/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+  preloadHeroImage?: boolean;
+  ogImage?: string;
+  extraJsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title = 'Académie Évolution',
+  description = SITE.description,
+  lang = 'fr',
+  preloadHeroImage = false,
+  ogImage = '/images/coach-thomas-hero.jpg',
+  extraJsonLd,
+} = Astro.props;
+
+const canonical = Astro.url.href;
+const siteBase = SITE.url.replace(/\/$/, '');
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteBase}${ogImage}`;
+const ogLocale = lang === 'fr' ? 'fr_CA' : 'en_CA';
+const altOgLocale = lang === 'fr' ? 'en_CA' : 'fr_CA';
+const slug = slugFromPathname(Astro.url.pathname);
+const { fr: hrefFr, en: hrefEn } = getAlternateUrls(SITE.url, slug);
+
+const jsonLdBlocks: Record<string, unknown>[] = [];
+if (extraJsonLd) {
+  if (Array.isArray(extraJsonLd)) jsonLdBlocks.push(...extraJsonLd);
+  else jsonLdBlocks.push(extraJsonLd);
+}
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="fr-CA" href={hrefFr} />
+    <link rel="alternate" hreflang="en-CA" href={hrefEn} />
+    <link rel="alternate" hreflang="x-default" href={hrefFr} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={altOgLocale} />
+    <meta property="og:site_name" content={SITE.name} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    {preloadHeroImage && (
+      <link
+        rel="preload"
+        as="image"
+        href="/images/coach-thomas-hero.jpg"
+        type="image/jpeg"
+        fetchpriority="high"
+      />
+    )}
+    <link rel="preconnect" href="https://hoirqrkdgbmvpwutwuwj.supabase.co" />
+
+    {jsonLdBlocks.map((data) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))}
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="skip-link"
+    >
+      {lang === 'fr' ? 'Aller au contenu' : 'Skip to content'}
+    </a>
+    <slot />
+    <script>
+      import '../scripts/interactions.ts';
+    </script>
+  </body>
+</html>

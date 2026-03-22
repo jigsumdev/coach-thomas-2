@@ -1,0 +1,121 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import Icon from '../../../components/Icon.astro';
+---
+
+<PageLayout
+  title="FAQ | Académie Évolution"
+  description="Answers to the most common questions about coaching with Thomas."
+  lang="en"
+>
+  <section class="relative z-20 flex min-h-[50vh] items-end border-0">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
+      <span class="tag anim-fade-up" style="--delay:.2s">FAQ</span>
+      <h1 class="font-display text-5xl sm:text-7xl font-extrabold tracking-tighter leading-[.9] mt-4 anim-slide-l" style="--delay:.35s">
+        FAQ.
+      </h1>
+      <p class="text-lg text-white/65 leading-relaxed mt-6 max-w-2xl anim-fade-up" style="--delay:.5s">
+        Everything you want to know before filling out the questionnaire.
+      </p>
+    </div>
+  </section>
+
+  <section class="relative z-20">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-20">
+      <div class="space-y-4">
+        <details class="glass rounded-xl group reveal" style="--delay:.15s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            Do I need a gym membership?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            No. The plan adapts to your situation — full gym, home setup, or a mix. What matters is that it’s realistic for you.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.2s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            Do I need a strict diet?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            No. The goal is a realistic, sustainable food structure — not a plan you can only follow for two weeks. We build habits you can keep long term.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.25s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            What is the questionnaire exactly?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            A short questionnaire (~3 minutes) so I understand your current situation: level, goal, schedule, past experience. I review it and reply personally within 24–48h.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.3s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            Is this for me if I’m short on time?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            Yes. That’s exactly why coaching exists. The plan is built around your reality — whether you have 3 or 5 training slots per week, we adapt.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.35s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            Do I need to already be fit?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            No. You start where you are. The plan matches your starting point — whether you haven’t trained in years or you already have experience.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.4s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            Is everyone accepted?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            No. The questionnaire checks fit on both sides. I work with men who are ready to commit seriously. If I’m not the right person to help, I’ll tell you honestly.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.45s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            How long until I see results?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            It depends on your starting point, commitment, and consistency. Most clients feel a shift in energy and habits within a few weeks. The goal is durable change — not a 30-day sprint.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group reveal" style="--delay:.5s" name="faq">
+          <summary class="cursor-pointer p-5 font-display font-semibold tracking-tight flex items-center justify-between gap-4 hover:bg-white/[.08] transition-colors rounded-xl">
+            How much does it cost?
+            <Icon name="plus" class="flex-shrink-0 transition-transform group-open:rotate-45" size={18} />
+          </summary>
+          <div class="px-5 pb-5 text-sm text-white/65 leading-relaxed">
+            Pricing depends on the level of support. Fill out the questionnaire first — if it’s a fit, we discuss it on the discovery call. There’s no long-term contract lock-in.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-20">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-20">
+      <div class="glass rounded-2xl p-8 md:p-12 text-center reveal" style="--delay:.1s">
+        <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight">Need help?</h2>
+        <p class="text-white/65 mt-3 max-w-lg mx-auto">Email me directly or complete the questionnaire — I reply personally.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+          <a href="/en/signin/" class="btn btn-primary">Free consultation</a>
+          <a href="/en/contact/" class="btn bg-transparent">Contact me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

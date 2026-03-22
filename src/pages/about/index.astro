@@ -1,0 +1,123 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import ChecklistItem from '../../components/ChecklistItem.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import coachPortrait from '../../assets/coach-thomas-hero.jpg';
+---
+
+<PageLayout
+  title="À propos | Académie Évolution"
+  description="L'histoire de Thomas et la philosophie derrière un coaching simple, structuré et réaliste pour les hommes occupés."
+  lang="fr"
+>
+  <HeroSection tag="À propos" minHeightClass="min-h-[50vh]">
+    <h1 class="font-display text-5xl sm:text-7xl font-extrabold tracking-tighter leading-[.9] mt-4 anim-slide-l" style="--delay:.35s">
+      Simple.<br />Réaliste.
+    </h1>
+    <p class="text-lg text-white/65 leading-relaxed mt-6 max-w-2xl anim-fade-up" style="--delay:.5s">
+      Je crois aux plans réalistes, appliqués avec constance, dans une vraie vie chargée.
+    </p>
+  </HeroSection>
+
+  <section class="relative z-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal" style="--delay:.1s">
+          <p class="tag">Mon histoire</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-4">Mon histoire.</h2>
+          <p class="lead mt-4 prose-site">J'étais un gars comme toi — occupé, fatigué, qui voulait se remettre en forme sans que ça prenne toute sa vie.</p>
+          <p class="body-muted mt-3 prose-site">Programmes génériques, diètes extrêmes, méthodes irréalistes — rien ne tenait. Le jour où j'ai compris que la clé, c'est la simplicité et la constance, tout a changé. C'est exactement ce que je transmets aujourd'hui.</p>
+        </div>
+        <div class="reveal" style="--delay:.3s">
+          <div class="overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={coachPortrait}
+              alt="Thomas — Coach"
+              width={800}
+              height={600}
+              class="w-full h-full object-cover object-top"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="tag reveal" style="--delay:.05s">Philosophie</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-4 reveal" style="--delay:.15s">Ma philosophie.</h2>
+        <p class="lead mt-3 reveal" style="--delay:.25s">
+          Un cadre honnête, direct et réaliste — si c'est ce que tu cherches, on parle le même langage.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.1s">
+          <p class="font-display font-semibold tracking-tight text-lg">La simplicité d'abord</p>
+          <p class="text-sm text-white/55 mt-2">Pas de surentraînement. Pas de plan à 47 exercices. On fait ce qui fonctionne — rien de plus.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.2s">
+          <p class="font-display font-semibold tracking-tight text-lg">Pas de diète extrême</p>
+          <p class="text-sm text-white/55 mt-2">Une structure alimentaire claire et applicable que tu peux suivre même les semaines chargées.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.3s">
+          <p class="font-display font-semibold tracking-tight text-lg">La constance avant la motivation</p>
+          <p class="text-sm text-white/55 mt-2">La motivation vient et repart. Un bon cadre te garde en mouvement même quand elle n'est pas là.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.4s">
+          <p class="font-display font-semibold tracking-tight text-lg">Le coaching direct</p>
+          <p class="text-sm text-white/55 mt-2">Pas de flou, pas de discours motivationnel vide. Je te dis ce que tu as besoin d'entendre.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.5s">
+          <p class="font-display font-semibold tracking-tight text-lg">Résultats durables</p>
+          <p class="text-sm text-white/55 mt-2">Je ne t'aide pas à sprinter 4 semaines. Je t'aide à bâtir un changement que tu maintiens.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.6s">
+          <p class="font-display font-semibold tracking-tight text-lg">Adapté à ta vraie vie</p>
+          <p class="text-sm text-white/55 mt-2">Job, famille, fatigue — le plan est construit autour de ta réalité, pas l'inverse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div class="reveal" style="--delay:.1s">
+          <p class="tag">Différence</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-4">
+            Pensé pour ta vraie vie.
+          </h2>
+          <p class="lead mt-4 prose-site">Je ne vends pas un programme — je bâtis un système avec toi, pensé pour une semaine de 50 heures, des enfants et une vie bien remplie.</p>
+          <p class="body-muted mt-3 prose-site">Tu développes des habitudes solides qui deviennent une partie de ta vie, pas un sprint de 4 semaines.</p>
+        </div>
+
+        <div class="reveal" style="--delay:.2s">
+          <div class="glass rounded-2xl p-6 md:p-8">
+            <p class="font-display font-semibold tracking-tight text-lg mb-5">Ce que tu peux attendre de moi</p>
+            <ul class="space-y-3" role="list">
+              <ChecklistItem>Un plan clair, simple et adapté à ta réalité</ChecklistItem>
+              <ChecklistItem>Du feedback direct et honnête</ChecklistItem>
+              <ChecklistItem>De l'accountability — je te relance quand il faut</ChecklistItem>
+              <ChecklistItem>Des ajustements continus selon ta progression</ChecklistItem>
+              <ChecklistItem>Un vrai suivi — pas un PDF et « bonne chance »</ChecklistItem>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection
+    title="On échange ?"
+    body="Remplis le questionnaire. Ça prend quelques minutes et ça me permet de comprendre ta situation avant d'échanger."
+    ctaHref="/signin/"
+    ctaLabel="Consultation gratuite"
+  />
+</PageLayout>

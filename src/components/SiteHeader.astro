@@ -1,0 +1,129 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  lang?: string;
+  currentPath?: string;
+}
+
+const { lang = 'fr', currentPath = '/' } = Astro.props;
+const isFr = lang === 'fr';
+const prefix = isFr ? '' : '/en';
+const altLang = isFr ? '/en/' : '/';
+const altLabel = isFr ? 'EN' : 'FR';
+
+function normalizePath(p: string): string {
+  if (!p || p === '/') return '/';
+  return p.endsWith('/') ? p : `${p}/`;
+}
+
+const cur = normalizePath(currentPath);
+
+function navHref(segment: string): string {
+  if (segment === '') return `${prefix}/`;
+  return `${prefix}/${segment}/`;
+}
+
+function isActive(segment: string): boolean {
+  const href = navHref(segment);
+  return cur === normalizePath(href);
+}
+
+const homeActive = cur === '/' || cur === '/en/';
+---
+
+<header class="relative z-50" style="background: linear-gradient(to bottom, rgba(10,10,10,.55), transparent);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between py-6">
+
+      <a href={`${prefix}/`} class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white" aria-label="Académie Évolution — Accueil">
+        Académie <span class="text-white/60">Évolution</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8" aria-label={isFr ? 'Navigation principale' : 'Primary navigation'} role="navigation">
+        <a
+          href={`${prefix}/`}
+          class:list={['text-base font-display transition nav-link', homeActive ? 'nav-link--active text-[var(--accent)]' : 'text-white/80 hover:text-white']}
+          aria-current={homeActive ? 'page' : undefined}
+        >{isFr ? 'Accueil' : 'Home'}</a>
+        <a
+          href={navHref('coaches')}
+          class:list={['text-base font-display transition nav-link', isActive('coaches') ? 'nav-link--active text-[var(--accent)]' : 'text-white/80 hover:text-white']}
+          aria-current={isActive('coaches') ? 'page' : undefined}
+        >{isFr ? 'Coaching' : 'Coaching'}</a>
+        <a
+          href={navHref('programs')}
+          class:list={['text-base font-display transition nav-link', isActive('programs') ? 'nav-link--active text-[var(--accent)]' : 'text-white/80 hover:text-white']}
+          aria-current={isActive('programs') ? 'page' : undefined}
+        >{isFr ? 'Résultats' : 'Results'}</a>
+        <a
+          href={navHref('about')}
+          class:list={['text-base font-display transition nav-link', isActive('about') ? 'nav-link--active text-[var(--accent)]' : 'text-white/80 hover:text-white']}
+          aria-current={isActive('about') ? 'page' : undefined}
+        >{isFr ? 'À propos' : 'About'}</a>
+        <a
+          href={navHref('support')}
+          class:list={['text-base font-display transition nav-link', isActive('support') ? 'nav-link--active text-[var(--accent)]' : 'text-white/80 hover:text-white']}
+          aria-current={isActive('support') ? 'page' : undefined}
+        >FAQ</a>
+        <a href={navHref('signin')} class="btn btn-primary text-base">{isFr ? 'Consultation gratuite' : 'Free consultation'}</a>
+        <a href={altLang} class="text-base font-display text-white/50 hover:text-white transition" aria-label={isFr ? 'Switch to English' : 'Passer en français'}>{altLabel}</a>
+      </nav>
+
+      <div class="flex items-center gap-3 lg:hidden">
+        <a href={altLang} class="text-xs font-display text-white/50 hover:text-white transition">{altLabel}</a>
+        <button
+          type="button"
+          id="js-menu-toggle"
+          class="btn"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <Icon id="js-icon-menu" name="menu" size={16} />
+          <Icon id="js-icon-close" name="close" class="hidden" size={16} />
+          <span id="js-menu-label">Menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div
+  id="mobile-menu"
+  class="lg:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-[60]"
+  role="dialog"
+  aria-modal="true"
+  aria-label={isFr ? 'Navigation' : 'Navigation'}
+  style="opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease,pointer-events 0s .3s;"
+>
+  <div class="flex flex-col h-full py-8 px-6">
+    <div class="flex justify-end mb-8">
+      <button type="button" id="js-menu-close" class="btn p-3" aria-label={isFr ? 'Fermer le menu' : 'Close menu'}>
+        <Icon name="close" size={20} />
+      </button>
+    </div>
+    <nav class="flex-1" aria-label={isFr ? 'Navigation mobile' : 'Mobile navigation'} role="navigation">
+      <div class="space-y-6">
+        <a href={`${prefix}/`} class="block text-2xl font-display text-white/80 hover:text-white transition">{isFr ? 'Accueil' : 'Home'}</a>
+        <a href={navHref('coaches')} class="block text-2xl font-display text-white/80 hover:text-white transition">{isFr ? 'Coaching' : 'Coaching'}</a>
+        <a href={navHref('programs')} class="block text-2xl font-display text-white/80 hover:text-white transition">{isFr ? 'Résultats' : 'Results'}</a>
+        <a href={navHref('about')} class="block text-2xl font-display text-white/80 hover:text-white transition">{isFr ? 'À propos' : 'About'}</a>
+        <a href={navHref('support')} class="block text-2xl font-display text-white/80 hover:text-white transition">FAQ</a>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <a href={navHref('signin')} class="btn btn-primary w-full justify-center text-base py-3">{isFr ? 'Consultation gratuite' : 'Free consultation'}</a>
+      </div>
+      <div class="mt-6 flex justify-center gap-5">
+        <a href="https://www.instagram.com/thomtangfitness/" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white transition" aria-label="Instagram">
+          <Icon name="instagram" size={20} />
+        </a>
+        <a href="https://www.tiktok.com/@thomtangfitness" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white transition" aria-label="TikTok">
+          <Icon name="tiktok" size={20} />
+        </a>
+        <a href="https://www.facebook.com/coach.thom.tang/" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white transition" aria-label="Facebook">
+          <Icon name="facebook" size={20} />
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+export const en = {
+  skipToContent: 'Skip to content',
+  nav: {
+    home: 'Home',
+    coaching: 'Coaching',
+    results: 'Results',
+    about: 'About',
+    faq: 'FAQ',
+    cta: 'Free consultation',
+    menu: 'Menu',
+    closeMenu: 'Close menu',
+    switchToEn: 'Switch to English',
+    switchToFr: 'Switch to French',
+  },
+  footer: {
+    tagline: 'Simple, structured coaching — built for real life.',
+    menu: 'Menu',
+    legal: 'Legal',
+    startTitle: 'Ready to start?',
+    startBody: 'Fill out the questionnaire — reply within 24–48h.',
+    cookies: 'Cookies',
+    copyright: 'All rights reserved.',
+    terms: 'Terms',
+    privacy: 'Privacy',
+  },
+  cookieConsent: {
+    text: 'We use essential cookies and, with your consent, analytics cookies to improve the site.',
+    accept: 'Accept',
+    decline: 'Decline',
+    policy: 'Cookie policy',
+  },
+  hero: {
+    headline: 'Simple coaching.\nLasting results.',
+    body: 'Fitness coaching for busy men who want lasting results — without extreme diets, unrealistic programs, or living at the gym.',
+    primaryCta: 'Free consultation',
+    secondaryCta: 'See results',
+  },
+} as const;

@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: 'fr' | 'en';
+  showHeroBg?: boolean;
+  preloadHeroImage?: boolean;
+  ogImage?: string;
+  /** Extra JSON-LD objects (e.g. LocalBusiness on home) */
+  extraJsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  lang = 'fr',
+  showHeroBg = true,
+  preloadHeroImage = showHeroBg,
+  ogImage,
+  extraJsonLd,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang={lang}
+  preloadHeroImage={preloadHeroImage}
+  ogImage={ogImage}
+  extraJsonLd={extraJsonLd}
+>
+  {showHeroBg && <div class="hero-bg" aria-hidden="true" />}
+  <SiteHeader lang={lang} currentPath={currentPath} />
+  <main id="main-content" tabindex="-1">
+    <slot />
+  </main>
+  <SiteFooter lang={lang} />
+  <CookieConsent lang={lang} />
+</BaseLayout>

@@ -1,0 +1,123 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../../../layouts/PageLayout.astro';
+import HeroSection from '../../../components/HeroSection.astro';
+import ChecklistItem from '../../../components/ChecklistItem.astro';
+import CtaSection from '../../../components/CtaSection.astro';
+import coachPortrait from '../../../assets/coach-thomas-hero.jpg';
+---
+
+<PageLayout
+  title="About | Académie Évolution"
+  description="Thomas’s story and the philosophy behind simple, structured coaching for busy men."
+  lang="en"
+>
+  <HeroSection tag="About" minHeightClass="min-h-[50vh]">
+    <h1 class="font-display text-5xl sm:text-7xl font-extrabold tracking-tighter leading-[.9] mt-4 anim-slide-l" style="--delay:.35s">
+      Simple.<br />Realistic.
+    </h1>
+    <p class="text-lg text-white/65 leading-relaxed mt-6 max-w-2xl anim-fade-up" style="--delay:.5s">
+      I believe in realistic plans, applied consistently, in a busy real life.
+    </p>
+  </HeroSection>
+
+  <section class="relative z-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal" style="--delay:.1s">
+          <p class="tag">My story</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-4">My story.</h2>
+          <p class="lead mt-4 prose-site">I was a guy like you — busy, tired, wanting to get in shape without it taking over my life.</p>
+          <p class="body-muted mt-3 prose-site">Generic programs, extreme diets, “too good to be true” methods — nothing stuck. The day I understood that the key is simplicity and consistency, everything changed. That’s exactly what I teach today.</p>
+        </div>
+        <div class="reveal" style="--delay:.3s">
+          <div class="overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={coachPortrait}
+              alt="Thomas — Coach"
+              width={800}
+              height={600}
+              class="w-full h-full object-cover object-top"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="tag reveal" style="--delay:.05s">Philosophy</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-4 reveal" style="--delay:.15s">My philosophy.</h2>
+        <p class="lead mt-3 reveal" style="--delay:.25s">
+          An honest, direct, realistic framework — if that’s what you’re looking for, we speak the same language.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.1s">
+          <p class="font-display font-semibold tracking-tight text-lg">Simplicity first</p>
+          <p class="text-sm text-white/55 mt-2">No overtraining. No 47-exercise plans. We do what works — nothing more.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.2s">
+          <p class="font-display font-semibold tracking-tight text-lg">No extreme dieting</p>
+          <p class="text-sm text-white/55 mt-2">A clear food structure you can follow even on busy weeks.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.3s">
+          <p class="font-display font-semibold tracking-tight text-lg">Consistency over motivation</p>
+          <p class="text-sm text-white/55 mt-2">Motivation comes and goes. A solid framework keeps you moving when it’s not there.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.4s">
+          <p class="font-display font-semibold tracking-tight text-lg">Direct coaching</p>
+          <p class="text-sm text-white/55 mt-2">No fluff, no empty hype. I tell you what you need to hear.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.5s">
+          <p class="font-display font-semibold tracking-tight text-lg">Lasting results</p>
+          <p class="text-sm text-white/55 mt-2">I’m not here for a 4-week sprint — I help you build change you can keep.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/[.15] transition-colors reveal" style="--delay:.6s">
+          <p class="font-display font-semibold tracking-tight text-lg">Built for your real life</p>
+          <p class="text-sm text-white/55 mt-2">Job, family, fatigue — the plan fits your reality, not the other way around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div class="reveal" style="--delay:.1s">
+          <p class="tag">Difference</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-4">
+            Built for your real life.
+          </h2>
+          <p class="lead mt-4 prose-site">I don’t sell a program — I build a system with you, designed for 50-hour weeks, kids, and a full life.</p>
+          <p class="body-muted mt-3 prose-site">You build solid habits that become part of your life, not a 4-week sprint.</p>
+        </div>
+
+        <div class="reveal" style="--delay:.2s">
+          <div class="glass rounded-2xl p-6 md:p-8">
+            <p class="font-display font-semibold tracking-tight text-lg mb-5">What you can expect from me</p>
+            <ul class="space-y-3" role="list">
+              <ChecklistItem>A clear, simple plan adapted to your reality</ChecklistItem>
+              <ChecklistItem>Direct, honest feedback</ChecklistItem>
+              <ChecklistItem>Accountability — I follow up when it matters</ChecklistItem>
+              <ChecklistItem>Ongoing adjustments based on your progress</ChecklistItem>
+              <ChecklistItem>Real follow-through — not a PDF and “good luck”</ChecklistItem>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection
+    title="Want to talk?"
+    body="Fill out the questionnaire. It takes a few minutes and helps me understand your situation before we connect."
+    ctaHref="/en/signin/"
+    ctaLabel="Free consultation"
+  />
+</PageLayout>

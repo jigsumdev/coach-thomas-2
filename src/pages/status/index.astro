@@ -1,0 +1,84 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Statut du système | Académie Évolution"
+  description="État actuel des services et de l’application."
+  lang="fr"
+>
+    <section class="relative z-20 border-0">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 py-20">
+        <span class="tag anim-fade-up" style="--delay:.2s">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+          Status
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tighter mt-4 anim-slide-l" style="--delay:.35s">Statut du système</h1>
+        <p class="text-sm text-white/60 mt-3 anim-fade-up" style="--delay:.5s">État actuel de tous les services</p>
+
+        <!-- Overall status -->
+        <div class="glass rounded-2xl p-6 mt-12 flex items-center gap-4 reveal" style="--delay:.1s">
+          <div class="h-4 w-4 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></div>
+          <div>
+            <p class="font-display font-semibold tracking-tight text-lg">Tout fonctionne</p>
+            <p class="text-sm text-white/50">Les services sont opérationnels</p>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="mt-8 space-y-3">
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style="--delay:.15s">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">Site web</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Opérationnel</span>
+          </div>
+
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style="--delay:.2s">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">Application</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Opérationnel</span>
+          </div>
+
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style="--delay:.25s">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">API</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Opérationnel</span>
+          </div>
+
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style="--delay:.3s">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">Messagerie coach</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Opérationnel</span>
+          </div>
+
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style="--delay:.35s">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">Paiements</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Opérationnel</span>
+          </div>
+
+          <div class="glass rounded-xl p-4 flex items-center justify-between reveal" style="--delay:.4s">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+              <p class="font-display font-medium text-sm">Suivi alimentaire</p>
+            </div>
+            <span class="text-xs text-emerald-400/80">Opérationnel</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-white/30 mt-8 text-center reveal" style="--delay:.5s">
+          Un souci ? Contacte <a href="mailto:info@academieevolution.com" class="underline hover:text-white/50 transition">info@academieevolution.com</a>
+        </p>
+      </div>
+    </section>
+</PageLayout>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  tag?: string;
+  minHeightClass?: string;
+  class?: string;
+}
+
+const {
+  tag,
+  minHeightClass = 'min-h-[50vh]',
+  class: className = '',
+} = Astro.props;
+---
+
+<section class={`relative z-20 flex ${minHeightClass} items-end border-0 ${className}`}>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
+    {tag && (
+      <span class="tag anim-fade-up" style="--delay:.2s">{tag}</span>
+    )}
+    <slot />
+  </div>
+</section>

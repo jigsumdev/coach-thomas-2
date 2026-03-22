@@ -1,0 +1,194 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Icon from '../../components/Icon.astro';
+---
+
+<PageLayout
+  title="Académie Évolution"
+  description="Fitness and nutrition coaching with Coach Thomas."
+  lang="en"
+>
+    <!-- ═══ HERO ════════════════════════════════════════ -->
+    <section class="flex min-h-[90vh] z-20 relative items-end border-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tighter leading-[.95] anim-slide-l" style="--delay:.3s">
+            Simple coaching.<br />Lasting results.
+          </h1>
+
+          <div class="space-y-6">
+            <p class="text-lg sm:text-xl leading-relaxed text-white/75 anim-fade-up" style="--delay:.65s">
+              Fitness coaching for busy men who want lasting results — without extreme diets, unrealistic programs, or living at the gym.
+            </p>
+
+            <div class="border-t border-white/10 pt-6 anim-scale" style="--delay:.8s">
+              <div class="flex flex-wrap items-center gap-4">
+                <div class="relative group">
+                  <a
+                    href="/en/signin/"
+                    class="btn btn-primary overflow-hidden relative shadow-[inset_0_1px_0_rgba(255,255,255,.08)]"
+                    id="js-cta-primary"
+                  >
+                    Free consultation
+                    <Icon name="arrowRight" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" size={16} />
+                    <span class="spotlight-glow pointer-events-none absolute inset-0 rounded-full" aria-hidden="true"></span>
+                  </a>
+                  <span class="pointer-events-none absolute -bottom-3 left-1/2 -translate-x-1/2 h-6 w-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.5),rgba(255,255,255,.25) 35%,transparent 70%); filter: blur(10px);" aria-hidden="true"></span>
+                </div>
+
+                <span class="w-px h-6 bg-white/20" aria-hidden="true"></span>
+
+                <a href="/en/programs/" class="btn bg-transparent">
+                  <Icon name="play" size={15} />
+                  See results
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 anim-fade-up" style="--delay:1s">
+              <div class="glass rounded-xl p-4">
+                <p class="font-display font-semibold tracking-tight">Simple, realistic method</p>
+                <p class="text-xs text-white/55 mt-1">No overcomplication. Just what works.</p>
+              </div>
+              <div class="glass rounded-xl p-4">
+                <p class="font-display font-semibold tracking-tight">Adapted to your real life</p>
+                <p class="text-xs text-white/55 mt-1">Job, family, fatigue — we build around it.</p>
+              </div>
+              <div class="glass rounded-xl p-4">
+                <p class="font-display font-semibold tracking-tight">Lasting results</p>
+                <p class="text-xs text-white/55 mt-1">A structure you can maintain.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TRANSFORMATIONS ══════════════════════════════ -->
+    <section class="relative z-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="tag reveal" style="--delay:.05s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+            Transformations
+          </span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mt-4 reveal" style="--delay:.15s">Real transformations.</h2>
+          <p class="text-white/65 leading-relaxed mt-3 reveal" style="--delay:.25s">Real results with real people. Whether you want to lose 5 or 50 kilos, the Academy is built for you.</p>
+        </div>
+
+        <div class="mt-5 reveal" style="--delay:.5s">
+          <div class="overflow-hidden glass rounded-2xl relative">
+            <div
+              class="aspect-video w-full h-full bg-gradient-to-br from-white/10 via-white/5 to-transparent"
+              aria-hidden="true"
+            ></div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-6 reveal" style="--delay:.6s">
+          <a href="/en/signin/" class="btn btn-primary">Free consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ JOIN THE FAMILY ════════════════════════════════ -->
+    <section class="relative z-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+
+        <div class="mb-8 reveal" style="--delay:.1s">
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">How it works.</h2>
+          <p class="text-white/65 mt-2">Three simple steps to start your transformation.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="glass rounded-2xl p-5 hover:bg-white/[.15] transition-colors reveal" style="--delay:.25s">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12h-5M15 8h-5M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>
+              </div>
+              <div>
+                <p class="font-display font-semibold tracking-tight">Complete the form</p>
+                <p class="text-xs text-white/60 font-display">Step 01</p>
+              </div>
+            </div>
+            <ul class="mt-4 space-y-2" role="list">
+              <li class="flex items-center gap-2 text-sm text-white/75">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Tell me about you and your goals
+              </li>
+              <li class="flex items-center gap-2 text-sm text-white/75">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Free with no commitment
+              </li>
+            </ul>
+            <div class="mt-5">
+              <a href="/en/signin/" class="btn btn-primary text-sm">Free consultation</a>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-5 hover:bg-white/[.15] transition-colors reveal" style="--delay:.35s">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
+              </div>
+              <div>
+                <p class="font-display font-semibold tracking-tight">Let's chat</p>
+                <p class="text-xs text-white/60 font-display">Step 02</p>
+              </div>
+            </div>
+            <ul class="mt-4 space-y-2" role="list">
+              <li class="flex items-center gap-2 text-sm text-white/75">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Free consultation call
+              </li>
+              <li class="flex items-center gap-2 text-sm text-white/75">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Personalized plan proposal
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass rounded-2xl p-5 hover:bg-white/[.15] transition-colors reveal" style="--delay:.45s">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 7 17l-5-5M22 10l-7.5 7.5L13 16"/></svg>
+              </div>
+              <div>
+                <p class="font-display font-semibold tracking-tight">You're all set!</p>
+                <p class="text-xs text-white/60 font-display">Step 03</p>
+              </div>
+            </div>
+            <ul class="mt-4 space-y-2" role="list">
+              <li class="flex items-center gap-2 text-sm text-white/75">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Instant access to your program
+              </li>
+              <li class="flex items-center gap-2 text-sm text-white/75">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Ongoing support with Thomas
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FINAL CTA ═════════════════════════════════════ -->
+    <section class="relative z-20">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 py-20">
+        <div class="glass rounded-2xl p-8 md:p-12 text-center reveal" style="--delay:.1s">
+          <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight">Ready?</h2>
+          <p class="text-white/65 mt-3 max-w-xl mx-auto">
+            Fill out the initial questionnaire. It takes a few minutes and lets me see if your profile matches what I offer.
+          </p>
+          <div class="mt-6">
+            <a href="/en/signin/" class="btn btn-primary">Free consultation now</a>
+          </div>
+          <p class="text-xs text-white/50 mt-4">No obligation. Just a clear first step to see if we're a good fit.</p>
+        </div>
+      </div>
+    </section>
+</PageLayout>

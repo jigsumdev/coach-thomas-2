@@ -1,0 +1,159 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+---
+
+<PageLayout title="Questionnaire | Académie Évolution" description="A quick questionnaire to see if coaching is right for you." lang="en">
+    <section class="relative z-20 border-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+          <div class="lg:sticky lg:top-24">
+            <h1 class="font-display text-5xl sm:text-6xl font-extrabold tracking-tighter leading-[.9] anim-slide-l" style="--delay:.35s">
+              The questionnaire.
+            </h1>
+            <p class="text-lg text-white/65 leading-relaxed mt-6 anim-fade-up" style="--delay:.5s">
+              Before we start anything, I want to understand your situation. The questionnaire lets me see where you are, what you want to achieve, and if my coaching is the right fit for you.
+            </p>
+
+            <div class="mt-8 space-y-4 anim-fade-up" style="--delay:.65s">
+              <div class="flex items-center gap-3">
+                <div class="h-8 w-8 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <p class="text-sm text-white/70">Takes about 3 minutes</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="h-8 w-8 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <p class="text-sm text-white/70">No commitment — it's just a first step</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="h-8 w-8 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <p class="text-sm text-white/70">I reply personally within 24–48h</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="h-8 w-8 rounded-lg glass flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <p class="text-sm text-white/70">If it's a good fit, we schedule a call</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="anim-fade-up" style="--delay:.4s">
+            <div class="glass rounded-2xl p-6 md:p-10 text-center space-y-6">
+              <div>
+                <p class="font-display text-2xl sm:text-3xl font-bold tracking-tight">Ready to start?</p>
+                <p class="text-white/65 mt-3 leading-relaxed">
+                  Click the button below to fill out the questionnaire. It's simple, quick, and confidential.
+                </p>
+              </div>
+
+              <a
+                href="#"
+                class="btn btn-primary w-full justify-center py-4 text-base"
+                id="js-typeform-cta"
+              >
+                Free consultation
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+
+              <p class="text-xs text-white/40">The questionnaire opens on this page, then you pick a time. Your answers stay confidential.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="booking-modal" class="booking-modal" hidden aria-hidden="true">
+      <div id="booking-modal-backdrop" class="booking-modal__backdrop"></div>
+      <section
+        id="booking-dialog"
+        class="booking-panel glass"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="booking-modal-title-typeform"
+      >
+        <header class="booking-panel__header">
+          <div class="booking-modal-titles min-w-0 flex-1">
+            <h2 id="booking-modal-title-typeform" class="font-display text-xl font-bold tracking-tight">
+              Questionnaire
+            </h2>
+            <h2 id="booking-modal-title-calendar" class="font-display text-xl font-bold tracking-tight" hidden>
+              Schedule your consultation
+            </h2>
+          </div>
+          <button type="button" id="booking-modal-close" class="btn booking-close-btn flex-shrink-0">
+            Close
+          </button>
+        </header>
+
+        <div id="typeform-step">
+          <p class="text-sm text-white/65 mb-2">
+            Answer the questions below. When you’re done, you’ll pick a time in the calendar.
+          </p>
+          <div id="typeform-container" class="typeform-container"></div>
+        </div>
+
+        <div id="booking-calendar-step" hidden>
+        <p id="booking-status" class="booking-status" hidden></p>
+
+        <div id="cal-desc" class="text-sm text-white/65">
+          Pick a date in the calendar, then select the time that works best for you.
+        </div>
+
+        <div id="cal-open" hidden></div>
+        <div id="cal-picker">
+          <div class="cal-nav">
+            <button id="cal-prev" type="button" class="btn">Previous</button>
+            <p id="cal-title" class="font-display text-base text-white/90"></p>
+            <button id="cal-next" type="button" class="btn">Next</button>
+          </div>
+
+          <div id="cal-dow" class="cal-dow">
+            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          </div>
+          <div id="cal-grid" class="cal-grid"></div>
+
+          <p id="cal-selected-label" class="text-sm text-white/60" hidden></p>
+          <button id="cal-done" type="button" class="btn mt-4">Choose this date</button>
+        </div>
+
+        <section id="cal-slots" hidden>
+          <p id="cal-slots-label" class="font-display text-base font-semibold tracking-tight"></p>
+          <div id="cal-slots-grid" class="cal-slots-grid"></div>
+          <button id="cal-back" type="button" class="btn mt-4">Back to calendar</button>
+        </section>
+
+        <section id="booking-form-wrap" hidden>
+          <p id="booking-summary" class="booking-summary"></p>
+          <form id="bookingForm" class="booking-form-grid">
+            <label class="booking-field">
+              <span>Full name</span>
+              <input id="bookName" name="name" type="text" required />
+            </label>
+
+            <label class="booking-field">
+              <span>Email</span>
+              <input id="bookEmail" name="email" type="email" required />
+            </label>
+
+            <label class="booking-field">
+              <span>Notes (optional)</span>
+              <textarea id="bookNote" name="note" rows="4"></textarea>
+            </label>
+
+            <button id="bookSubmit" type="submit" class="btn w-full justify-center py-3 text-base">
+              Send request
+            </button>
+          </form>
+
+          <p id="booking-form-error" class="booking-error" hidden></p>
+        </section>
+        </div>
+      </section>
+    </div>
+</PageLayout>

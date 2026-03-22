@@ -1,0 +1,14 @@
+---
+type TagName = 'div' | 'article' | 'section';
+
+interface Props {
+  class?: string;
+  as?: TagName;
+}
+
+const { class: className = '', as: Tag = 'div' }: Props = Astro.props;
+---
+
+<Tag class={`glass rounded-2xl ${className}`}>
+  <slot />
+</Tag>
