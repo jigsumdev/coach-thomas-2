@@ -1,9 +1,10 @@
 name = "forge"
 compatibility_date = "2024-03-20"
+
+# Pages: build output (Astro → dist). Cloudflare Pages reads this for Git builds.
 pages_build_output_dir = "dist"
 
-[env.production]
-# Add production environment variables here
-
-[env.preview]
-# Add preview environment variables here
+# Satisfies `wrangler deploy` when CI runs it instead of `wrangler pages deploy`;
+# same folder as the static site build output.
+[assets]
+directory = "./dist"
