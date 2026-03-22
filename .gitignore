@@ -1,5 +1,7 @@
 # Dependencies
 node_modules/
+# Use package-lock.json only; Cloudflare Pages runs `bun install --frozen-lockfile` if bun.lock exists
+bun.lock
 
 # Astro cache & build output (CI/Cloudflare builds from source)
 .astro/
